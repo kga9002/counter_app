@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 
 class Colorwidget extends StatefulWidget {
+  final void Function(MapEntry<String, Color>) onPressed;
+
+  Colorwidget({required this.onPressed, Key? key}) : super(key: key);
+
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _ColorwidgetState createState() => _ColorwidgetState();
 }
 
-class _MyHomePageState extends State<Colorwidget> {
+class _ColorwidgetState extends State<Colorwidget> {
   Map<String, Color> colors = {
     "빨강": Colors.red,
     "주황": Colors.orange,
@@ -47,6 +51,7 @@ class _MyHomePageState extends State<Colorwidget> {
                       GestureDetector(
                         onTap: () {
                           onClickContainer(colors.entries.toList()[i]);
+                          widget.onPressed(colors.entries.toList()[i]);
                         },
                         child: Container(
                           width: 100,

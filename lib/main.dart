@@ -25,11 +25,24 @@ class MyStatefulWidget extends StatefulWidget {
 }
 
 class MyStatefulWidgetState extends State<StatefulWidget> {
-  final List<Widget> _widgetOptions = <Widget>[
-    HomeWidget(),
-    Colorwidget(),
-    StarWidget(),
-  ];
+  Color currentColor = Colors.red;
+  void changeColor(MapEntry<String, Color> object) {
+    setState(() {
+      currentColor = object.value;
+    });
+  }
+
+  late List<Widget> _widgetOptions;
+
+  @override
+  void initState() {
+    super.initState();
+    _widgetOptions = <Widget>[
+      HomeWidget(),
+      Colorwidget(onPressed: changeColor),
+      StarWidget(),
+    ];
+  }
 
   final PageController _pageController = PageController();
 
@@ -79,7 +92,7 @@ class MyStatefulWidgetState extends State<StatefulWidget> {
                 ],
                 currentIndex: _selectedIndex,
                 selectedItemColor: Colors.white,
-                backgroundColor: Colors.blueAccent,
+                backgroundColor: currentColor,
                 onTap: _onItemTapped,
               ),
             ),
