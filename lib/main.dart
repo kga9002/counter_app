@@ -64,13 +64,25 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            Column(
               children: [
-                for (var i = 1; i <= 9; i++)
-                  Text(_getMultiply(i), style: TextStyle(fontSize: 8)),
+                for (var i = 0; i < 3; i++)
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      for (var j = 1; j <= 3; j++)
+                        Text(
+                          _getMultiply(i * 3 + j),
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                    ],
+                  ),
               ],
             ),
+
             // Text(
             //   '$_counter',
             //   style: Theme.of(context).textTheme.headlineMedium,
