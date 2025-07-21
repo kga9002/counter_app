@@ -3,6 +3,7 @@ import 'book.dart';
 import 'hello.dart';
 import "star.dart";
 import 'colorWidget.dart';
+import 'textfield/normal.dart';
 
 void main() {
   runApp(MyApp());
@@ -39,9 +40,10 @@ class MyStatefulWidgetState extends State<StatefulWidget> {
     super.initState();
     _widgetOptions = <Widget>[
       HomeWidget(),
-      Colorwidget(onPressed: changeColor),
-      HelloWidget(),
-      StarWidget(),
+      // Colorwidget(onPressed: changeColor),
+      // HelloWidget(),
+      // StarWidget(),
+      NormalTextFieldWidget(),
     ];
   }
 
@@ -82,17 +84,21 @@ class MyStatefulWidgetState extends State<StatefulWidget> {
                     icon: Icon(Icons.home),
                     label: "Home",
                   ),
+                  // BottomNavigationBarItem(
+                  //   icon: Icon(Icons.palette),
+                  //   label: "Color",
+                  // ),
+                  // BottomNavigationBarItem(
+                  //   icon: Icon(Icons.handshake),
+                  //   label: "Hello",
+                  // ),
+                  // BottomNavigationBarItem(
+                  //   icon: Icon(Icons.star),
+                  //   label: "Star",
+                  // ),
                   BottomNavigationBarItem(
-                    icon: Icon(Icons.palette),
-                    label: "Color",
-                  ),
-                  BottomNavigationBarItem(
-                    icon: Icon(Icons.handshake),
-                    label: "Hello",
-                  ),
-                  BottomNavigationBarItem(
-                    icon: Icon(Icons.star),
-                    label: "Star",
+                    icon: Icon(Icons.text_fields),
+                    label: "기본입력창",
                   ),
                 ],
                 currentIndex: _selectedIndex,
