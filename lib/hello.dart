@@ -5,42 +5,50 @@ class HelloWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: TextButton(
-            style: TextButton.styleFrom(
-              textStyle: const TextStyle(fontSize: 32),
-            ),
-            onPressed: () {
-              showAlertDialog(context);
-            },
-            child: const Text("Hello Press here"),
-          ),
+    return Scaffold(
+      body: Container(
+        padding: EdgeInsets.all(20),
+        child: GridView.count(
+          crossAxisCount: 3,
+          padding: const EdgeInsets.all(16),
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 10,
+          children: [
+            for (int i = 1; i <= 9; i++)
+              Center(
+                child: TextButton(
+                  onPressed: () {
+                    showAlertDialog(context, i);
+                  },
+                  child: Text(
+                    "$i단",
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 32),
+                  ),
+                ),
+              ),
+          ],
         ),
       ),
     );
   }
 
-  void showAlertDialog(BuildContext context) async {
+  void showAlertDialog(BuildContext context, int dan) async {
+    String multiply = "";
+    for (int i = 1; i <= 9; i++) {
+      multiply += "$dan X $i = ${i * dan}\n";
+    }
     String result = await showDialog(
       context: context,
       barrierDismissible: false,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: const Text('AlertDialog Sample'),
-          content: const Text("Select button you want"),
+          title: Text("$dan단"),
+          content: Text(multiply),
           actions: <Widget>[
             TextButton(
               child: const Text('OK'),
               onPressed: () {
                 Navigator.pop(context, "OK");
-              },
-            ),
-            TextButton(
-              child: const Text('Cancel'),
-              onPressed: () {
-                Navigator.pop(context, "Cancel");
               },
             ),
           ],

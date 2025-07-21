@@ -40,6 +40,7 @@ class MyStatefulWidgetState extends State<StatefulWidget> {
     _widgetOptions = <Widget>[
       HomeWidget(),
       Colorwidget(onPressed: changeColor),
+      HelloWidget(),
       StarWidget(),
     ];
   }
@@ -86,6 +87,10 @@ class MyStatefulWidgetState extends State<StatefulWidget> {
                     label: "Color",
                   ),
                   BottomNavigationBarItem(
+                    icon: Icon(Icons.handshake),
+                    label: "Hello",
+                  ),
+                  BottomNavigationBarItem(
                     icon: Icon(Icons.star),
                     label: "Star",
                   ),
@@ -93,6 +98,7 @@ class MyStatefulWidgetState extends State<StatefulWidget> {
                 currentIndex: _selectedIndex,
                 selectedItemColor: Colors.white,
                 backgroundColor: currentColor,
+                type: BottomNavigationBarType.fixed,
                 onTap: _onItemTapped,
               ),
             ),
