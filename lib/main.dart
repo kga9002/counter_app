@@ -6,6 +6,8 @@ import 'colorWidget.dart';
 import 'textfield/normal.dart';
 import 'textfield/number.dart';
 import 'textfield/quiz.dart';
+import 'textfield/password.dart';
+import 'note.dart';
 
 void main() {
   runApp(MyApp());
@@ -48,6 +50,8 @@ class MyStatefulWidgetState extends State<StatefulWidget> {
       NormalTextFieldWidget(),
       NumberTextFieldWidget(),
       QuizWidget(),
+      PassWordTextFieldWidget(),
+      NoteTextFieldWidget(),
     ];
   }
 
@@ -82,45 +86,47 @@ class MyStatefulWidgetState extends State<StatefulWidget> {
           children: <Widget>[
             Scaffold(
               body: Center(child: _widgetOptions.elementAt(_selectedIndex)),
-              bottomNavigationBar: BottomNavigationBar(
-                items: const <BottomNavigationBarItem>[
-                  // BottomNavigationBarItem(
-                  //   icon: Icon(Icons.home),
-                  //   label: "Home",
-                  // ),
-                  // BottomNavigationBarItem(
-                  //   icon: Icon(Icons.palette),
-                  //   label: "Color",
-                  // ),
-                  // BottomNavigationBarItem(
-                  //   icon: Icon(Icons.handshake),
-                  //   label: "Hello",
-                  // ),
-                  // BottomNavigationBarItem(
-                  //   icon: Icon(Icons.star),
-                  //   label: "Star",
-                  // ),
-                  BottomNavigationBarItem(
-                    icon: Icon(Icons.text_fields),
-                    label: "기본입력창",
-                  ),
-                  BottomNavigationBarItem(
-                    icon: Icon(Icons.numbers),
-                    label: "숫자입력창",
-                  ),
-                  BottomNavigationBarItem(
-                    icon: Icon(Icons.question_mark),
-                    label: "quiz",
-                  ),
-                ],
-                currentIndex: _selectedIndex,
-                selectedItemColor: Colors.white,
-                backgroundColor: currentColor,
-                type: BottomNavigationBarType.fixed,
-                onTap: _onItemTapped,
-              ),
             ),
           ],
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          items: const <BottomNavigationBarItem>[
+            // BottomNavigationBarItem(
+            //   icon: Icon(Icons.home),
+            //   label: "Home",
+            // ),
+            // BottomNavigationBarItem(
+            //   icon: Icon(Icons.palette),
+            //   label: "Color",
+            // ),
+            // BottomNavigationBarItem(
+            //   icon: Icon(Icons.handshake),
+            //   label: "Hello",
+            // ),
+            // BottomNavigationBarItem(
+            //   icon: Icon(Icons.star),
+            //   label: "Star",
+            // ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.text_fields),
+              label: "기본입력창",
+            ),
+            BottomNavigationBarItem(icon: Icon(Icons.numbers), label: "숫자입력창"),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.question_mark),
+              label: "quiz",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.security_update),
+              label: "pw",
+            ),
+            BottomNavigationBarItem(icon: Icon(Icons.note), label: "note"),
+          ],
+          currentIndex: _selectedIndex,
+          selectedItemColor: Colors.white,
+          backgroundColor: currentColor,
+          type: BottomNavigationBarType.fixed,
+          onTap: _onItemTapped,
         ),
       ),
     );
