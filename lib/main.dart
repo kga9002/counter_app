@@ -4,6 +4,8 @@ import 'hello.dart';
 import "star.dart";
 import 'colorWidget.dart';
 import 'textfield/normal.dart';
+import 'textfield/number.dart';
+import 'textfield/quiz.dart';
 
 void main() {
   runApp(MyApp());
@@ -39,11 +41,13 @@ class MyStatefulWidgetState extends State<StatefulWidget> {
   void initState() {
     super.initState();
     _widgetOptions = <Widget>[
-      HomeWidget(),
+      // HomeWidget(),
       // Colorwidget(onPressed: changeColor),
       // HelloWidget(),
       // StarWidget(),
       NormalTextFieldWidget(),
+      NumberTextFieldWidget(),
+      QuizWidget(),
     ];
   }
 
@@ -80,10 +84,10 @@ class MyStatefulWidgetState extends State<StatefulWidget> {
               body: Center(child: _widgetOptions.elementAt(_selectedIndex)),
               bottomNavigationBar: BottomNavigationBar(
                 items: const <BottomNavigationBarItem>[
-                  BottomNavigationBarItem(
-                    icon: Icon(Icons.home),
-                    label: "Home",
-                  ),
+                  // BottomNavigationBarItem(
+                  //   icon: Icon(Icons.home),
+                  //   label: "Home",
+                  // ),
                   // BottomNavigationBarItem(
                   //   icon: Icon(Icons.palette),
                   //   label: "Color",
@@ -99,6 +103,14 @@ class MyStatefulWidgetState extends State<StatefulWidget> {
                   BottomNavigationBarItem(
                     icon: Icon(Icons.text_fields),
                     label: "기본입력창",
+                  ),
+                  BottomNavigationBarItem(
+                    icon: Icon(Icons.numbers),
+                    label: "숫자입력창",
+                  ),
+                  BottomNavigationBarItem(
+                    icon: Icon(Icons.question_mark),
+                    label: "quiz",
                   ),
                 ],
                 currentIndex: _selectedIndex,
