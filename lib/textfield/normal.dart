@@ -11,6 +11,7 @@ class NormalTextFieldWidget extends StatefulWidget {
 
 class NormalTextFieldState extends State<NormalTextFieldWidget> {
   String _text = "";
+  var controller = TextEditingController();
 
   void changeText(String value) {
     setState(() {
@@ -26,15 +27,21 @@ class NormalTextFieldState extends State<NormalTextFieldWidget> {
         child: ListView(
           children: [
             TextField(
+              controller: controller,
               decoration: InputDecoration(
                 labelText: "이름을 입력하세요",
                 border: OutlineInputBorder(),
               ),
-              onChanged: (value) {
-                changeText(value);
-              },
             ),
             Text(_text),
+            ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  _text = controller.text;
+                });
+              },
+              child: Text("제출"),
+            ),
           ],
         ),
       ),

@@ -7,6 +7,8 @@ import 'textfield/normal.dart';
 import 'textfield/number.dart';
 import 'textfield/quiz.dart';
 import 'textfield/password.dart';
+import 'textfield/button-input.dart';
+import 'textfield/calculator.dart';
 import 'note.dart';
 
 void main() {
@@ -48,10 +50,11 @@ class MyStatefulWidgetState extends State<StatefulWidget> {
       // HelloWidget(),
       // StarWidget(),
       NormalTextFieldWidget(),
-      NumberTextFieldWidget(),
-      QuizWidget(),
-      PassWordTextFieldWidget(),
+      // NumberTextFieldWidget(),
+      // QuizWidget(),
+      // PassWordTextFieldWidget(),
       NoteTextFieldWidget(),
+      ButtonInputTextFieldWidget(), CalTextFieldWidget(),
     ];
   }
 
@@ -111,16 +114,18 @@ class MyStatefulWidgetState extends State<StatefulWidget> {
               icon: Icon(Icons.text_fields),
               label: "기본입력창",
             ),
-            BottomNavigationBarItem(icon: Icon(Icons.numbers), label: "숫자입력창"),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.question_mark),
-              label: "quiz",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.security_update),
-              label: "pw",
-            ),
+            // BottomNavigationBarItem(icon: Icon(Icons.numbers), label: "숫자입력창"),
+            // BottomNavigationBarItem(
+            //   icon: Icon(Icons.question_mark),
+            //   label: "quiz",
+            // ),
+            // BottomNavigationBarItem(
+            //   icon: Icon(Icons.security_update),
+            //   label: "pw",
+            // ),
             BottomNavigationBarItem(icon: Icon(Icons.note), label: "note"),
+            BottomNavigationBarItem(icon: Icon(Icons.note), label: "123"),
+            BottomNavigationBarItem(icon: Icon(Icons.calculate), label: "cal"),
           ],
           currentIndex: _selectedIndex,
           selectedItemColor: Colors.white,

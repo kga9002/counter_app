@@ -39,7 +39,7 @@ class NoteTextFieldState extends State<NoteTextFieldWidget> {
                 TextField(
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
-                    labelText: "직업 입력",
+                    labelText: "이메일 입력",
                     border: OutlineInputBorder(),
                   ),
                 ),
