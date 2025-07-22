@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
-import 'day9/study/book.dart';
-import 'day9/study/hello.dart';
-import "day9/study/star.dart";
-import 'day9/study/colorWidget.dart';
-import 'day11/textfield/normal.dart';
-import 'day11/textfield/number.dart';
-import 'day11/textfield/quiz.dart';
-import 'day11/textfield/password.dart';
-import 'day11/textfield/button-input.dart';
-import 'day11/textfield/calculator.dart';
-import 'day9/study/note.dart';
+
+import 'day12/input/checkbox.dart';
+import 'day12/input/datepicker.dart';
+import 'day12/input/dropdown.dart';
+import 'day12/input/radio.dart';
+import 'day12/input/slider.dart';
+import 'day12/input/switch.dart';
 
 void main() {
   runApp(MyApp());
@@ -45,16 +41,12 @@ class MyStatefulWidgetState extends State<StatefulWidget> {
   void initState() {
     super.initState();
     _widgetOptions = <Widget>[
-      // HomeWidget(),
-      // Colorwidget(onPressed: changeColor),
-      // HelloWidget(),
-      // StarWidget(),
-      NormalTextFieldWidget(),
-      // NumberTextFieldWidget(),
-      // QuizWidget(),
-      // PassWordTextFieldWidget(),
-      NoteTextFieldWidget(),
-      ButtonInputTextFieldWidget(), CalTextFieldWidget(),
+      SwtichWidget(),
+      CheckBoxWidget(),
+      RadioWidget(),
+      SliderWidget(),
+      DropdownWidget(),
+      DatePickerWidget(),
     ];
   }
 
@@ -94,38 +86,30 @@ class MyStatefulWidgetState extends State<StatefulWidget> {
         ),
         bottomNavigationBar: BottomNavigationBar(
           items: const <BottomNavigationBarItem>[
-            // BottomNavigationBarItem(
-            //   icon: Icon(Icons.home),
-            //   label: "Home",
-            // ),
-            // BottomNavigationBarItem(
-            //   icon: Icon(Icons.palette),
-            //   label: "Color",
-            // ),
-            // BottomNavigationBarItem(
-            //   icon: Icon(Icons.handshake),
-            //   label: "Hello",
-            // ),
-            // BottomNavigationBarItem(
-            //   icon: Icon(Icons.star),
-            //   label: "Star",
-            // ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.text_fields),
-              label: "기본입력창",
+              icon: Icon(Icons.switch_access_shortcut),
+              label: "swtich",
             ),
-            // BottomNavigationBarItem(icon: Icon(Icons.numbers), label: "숫자입력창"),
-            // BottomNavigationBarItem(
-            //   icon: Icon(Icons.question_mark),
-            //   label: "quiz",
-            // ),
-            // BottomNavigationBarItem(
-            //   icon: Icon(Icons.security_update),
-            //   label: "pw",
-            // ),
-            BottomNavigationBarItem(icon: Icon(Icons.note), label: "note"),
-            BottomNavigationBarItem(icon: Icon(Icons.note), label: "123"),
-            BottomNavigationBarItem(icon: Icon(Icons.calculate), label: "cal"),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.check_box),
+              label: "checkbox",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.radio_button_checked_outlined),
+              label: "radio",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.slideshow_rounded),
+              label: "slider",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.arrow_drop_down),
+              label: "dropdown",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.calendar_month),
+              label: "datepicker",
+            ),
           ],
           currentIndex: _selectedIndex,
           selectedItemColor: Colors.white,
