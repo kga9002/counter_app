@@ -1,3 +1,4 @@
+import 'package:counter_app/day12/button/elevated.dart';
 import 'package:flutter/material.dart';
 
 import 'day12/input/checkbox.dart';
@@ -49,6 +50,7 @@ class MyStatefulWidgetState extends State<StatefulWidget> {
       DropdownWidget(),
       DatePickerWidget(),
       HotelWidget(),
+      ElevatedBtnWidget(),
     ];
   }
 
@@ -113,6 +115,7 @@ class MyStatefulWidgetState extends State<StatefulWidget> {
               label: "datepicker",
             ),
             BottomNavigationBarItem(icon: Icon(Icons.hotel), label: "hotel"),
+            BottomNavigationBarItem(icon: Icon(Icons.hotel), label: "btn"),
           ],
           currentIndex: _selectedIndex,
           selectedItemColor: Colors.white,
