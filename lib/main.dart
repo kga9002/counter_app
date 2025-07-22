@@ -6,6 +6,7 @@ import 'day12/input/dropdown.dart';
 import 'day12/input/radio.dart';
 import 'day12/input/slider.dart';
 import 'day12/input/switch.dart';
+import 'day12/quiz.dart';
 
 void main() {
   runApp(MyApp());
@@ -47,6 +48,7 @@ class MyStatefulWidgetState extends State<StatefulWidget> {
       SliderWidget(),
       DropdownWidget(),
       DatePickerWidget(),
+      HotelWidget(),
     ];
   }
 
@@ -110,6 +112,7 @@ class MyStatefulWidgetState extends State<StatefulWidget> {
               icon: Icon(Icons.calendar_month),
               label: "datepicker",
             ),
+            BottomNavigationBarItem(icon: Icon(Icons.hotel), label: "hotel"),
           ],
           currentIndex: _selectedIndex,
           selectedItemColor: Colors.white,
