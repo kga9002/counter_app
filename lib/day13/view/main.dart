@@ -1,3 +1,4 @@
+import 'package:counter_app/day13/view/reorderable.dart';
 import 'package:flutter/material.dart';
 
 import 'dismissible.dart';
@@ -89,6 +90,15 @@ class MyStatefulWidgetState extends State<MyStatefulWidget> {
               );
             },
             child: Text("dismissible view"),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ReorderableWidget()),
+              );
+            },
+            child: Text("reorderable view"),
           ),
         ],
       ),

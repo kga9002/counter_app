@@ -14,7 +14,7 @@ class DismissibleWidget extends StatelessWidget {
         //   return showDialog(context: context, builder: (context) {});
         // },
         onDismissed: (direction) {
-          print(direction);
+          print("deleted");
         },
       ),
     );
