@@ -1,13 +1,7 @@
-import 'package:counter_app/day12/button/elevated.dart';
+import 'package:counter_app/day13/button/elevated.dart';
 import 'package:flutter/material.dart';
-
-import 'day12/input/checkbox.dart';
-import 'day12/input/datepicker.dart';
-import 'day12/input/dropdown.dart';
-import 'day12/input/radio.dart';
-import 'day12/input/slider.dart';
-import 'day12/input/switch.dart';
 import 'day12/quiz.dart';
+import 'day13/button/textbtn.dart';
 
 void main() {
   runApp(MyApp());
@@ -43,14 +37,9 @@ class MyStatefulWidgetState extends State<StatefulWidget> {
   void initState() {
     super.initState();
     _widgetOptions = <Widget>[
-      SwtichWidget(),
-      CheckBoxWidget(),
-      RadioWidget(),
-      SliderWidget(),
-      DropdownWidget(),
-      DatePickerWidget(),
       HotelWidget(),
       ElevatedBtnWidget(),
+      TextBtnWidget(),
     ];
   }
 
@@ -90,32 +79,9 @@ class MyStatefulWidgetState extends State<StatefulWidget> {
         ),
         bottomNavigationBar: BottomNavigationBar(
           items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(Icons.switch_access_shortcut),
-              label: "swtich",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.check_box),
-              label: "checkbox",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.radio_button_checked_outlined),
-              label: "radio",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.slideshow_rounded),
-              label: "slider",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.arrow_drop_down),
-              label: "dropdown",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.calendar_month),
-              label: "datepicker",
-            ),
             BottomNavigationBarItem(icon: Icon(Icons.hotel), label: "hotel"),
             BottomNavigationBarItem(icon: Icon(Icons.hotel), label: "btn"),
+            BottomNavigationBarItem(icon: Icon(Icons.hotel), label: "textbtn"),
           ],
           currentIndex: _selectedIndex,
           selectedItemColor: Colors.white,
