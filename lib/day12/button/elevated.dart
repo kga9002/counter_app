@@ -32,9 +32,7 @@ class _ElevatedBtnWidgetState extends State<ElevatedBtnWidget> {
         children: labels
             .map(
               (value) => ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: value, // ✅ 이 방식은 괜찮음
-                ),
+                style: ElevatedButton.styleFrom(backgroundColor: value),
                 onPressed: () {
                   setState(() {
                     currentColor = value;
