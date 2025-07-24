@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'audio.dart';
+import 'mp3.dart';
 
 void main() => runApp(const MyApp());
 
@@ -57,6 +58,15 @@ class HomePage extends StatelessWidget {
                 );
               },
               child: Text("go audio widget"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Mp3Widget()),
+                );
+              },
+              child: Text("mp3 2"),
             ),
           ],
         ),

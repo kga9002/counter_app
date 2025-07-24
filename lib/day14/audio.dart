@@ -74,7 +74,7 @@ class _AudioWidgetState extends State<AudioWidget> {
     }
   }
 
-  Future<void> _stopMusic() async {
+  _stopMusic() async {
     try {
       await player.stop();
       setState(() {
@@ -85,6 +85,12 @@ class _AudioWidgetState extends State<AudioWidget> {
     } catch (e) {
       print('정지 오류: $e');
     }
+  }
+
+  seekTo(double seconds) async {
+    final newPos = Duration(seconds: seconds.toInt());
+
+    await player.seek(newPos);
   }
 
   @override
@@ -102,14 +108,12 @@ class _AudioWidgetState extends State<AudioWidget> {
         child: Column(
           children: [
             Slider(
-              value: _currentSliderValue,
+              value: _currentPosition.inSeconds.toDouble(),
               min: 0,
-              max: 1,
+              max: _totalDuration.inSeconds.toDouble(),
               activeColor: Colors.blue,
               onChanged: (double newValue) {
-                setState(() {
-                  _currentSliderValue = newValue;
-                });
+                seekTo(newValue);
               },
             ),
             Row(
@@ -129,6 +133,9 @@ class _AudioWidgetState extends State<AudioWidget> {
                   child: Icon(Icons.stop, color: Colors.blue),
                 ),
               ],
+            ),
+            Text(
+              "${_currentSliderValue} : ${_totalDuration.inSeconds.toDouble()}",
             ),
           ],
         ),
