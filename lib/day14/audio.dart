@@ -62,15 +62,16 @@ class _AudioWidgetState extends State<AudioWidget> {
         await player.resume();
         print('음악 이어서 재생됨');
       } else {
-        await player.play(
-          UrlSource(
-            "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
-          ),
-        );
+        // await player.play(
+        //   UrlSource(
+        //     "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+        //   ),
+        // );
+        await player.play(AssetSource("audio/SoundHelix-Song-2.mp3"));
         print('음악 재생 시작됨');
       }
-    } catch (e) {
-      print('재생/일시정지 오류: $e');
+    } catch (e, stack) {
+      print('재생/일시정지 오류: $e $stack');
     }
   }
 
