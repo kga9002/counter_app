@@ -57,6 +57,7 @@ class HotelState extends State<HotelWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: Text("호텔 예약")),
       body: Container(
         padding: EdgeInsets.all(20),
         child: ListView(

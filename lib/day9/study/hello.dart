@@ -6,6 +6,7 @@ class HelloWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: Text("구구단")),
       body: Container(
         padding: EdgeInsets.all(20),
         child: GridView.count(

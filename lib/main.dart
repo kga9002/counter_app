@@ -9,7 +9,14 @@ import 'package:firebase_core/firebase_core.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
+  if (Firebase.apps.isEmpty) {
+    await Firebase.initializeApp(
+      name: "dev project",
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
+  }
+
   print("초기화 완료");
   runApp(MyApp());
 }

@@ -88,6 +88,7 @@ class CalTextFieldState extends State<CalTextFieldWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: Text("계산기")),
       body: Container(
         padding: EdgeInsets.all(10),
         child: ListView(
